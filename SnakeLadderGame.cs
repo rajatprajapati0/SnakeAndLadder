@@ -9,34 +9,48 @@ namespace SnakeAndLadder
     {
         const int snake = 1;
         const int ladder = 2;
-       
+        const int totalSteps = 100;
         static string msg;
-        public string GameLogic()
+        static int winCount;
+        public int GameLogic()
         {
+            int steps = 0;
             int Position = 0;
+
             Random random = new Random();
-            int dice = random.Next(1, 7);
-            int chance = random.Next(0,3);
-            
+            while (Position < totalSteps)
+            {
+
+                int dice = random.Next(1, 7);
+                int chance = random.Next(0, 3);
+
                 switch (chance)
                 {
                     case snake:
                         Position -= dice;
-                        msg = "snake";
+                        if(Position < 0) 
+                        {
+                         Position = 0;
+                        }
+                        msg = "snake~~~~~";
                         break;
                     case ladder:
                         Position += dice;
-                        msg = "ladder";
+                        msg = "ladder#####";
                         break;
                     default:
                         msg = "No Play";
                         break;
                 }
-          return
+                Console.WriteLine
                (@$"
+                 You got no. on dice:{dice}
                  You got:{msg}
-                 Your position:{Position}                                              
+                 Your position:{Position}                  
               ");
+                winCount++;
+            }
+                return winCount ;
 
         }
     }

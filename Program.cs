@@ -10,8 +10,9 @@ namespace SnakeAndLadder
             Console.WriteLine("******Snake & Ladder Simulator******");
             Console.WriteLine("Snake and Ladder game played with single player\n");
             SnakeLadderGame game = new SnakeLadderGame();
-            Console.WriteLine("dice rolled to win -count:"+game.GameLogic());
+            game.GameLogic();
             Console.Read();
+
         }
     }
 }

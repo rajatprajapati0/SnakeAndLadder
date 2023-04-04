@@ -6,7 +6,11 @@ namespace SnakeAndLadder
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("welcome to Snake and Ladder program ");
+            int Position = 0;
+            Console.WriteLine("******Snake & Ladder Simulator******");
+            Console.WriteLine("Snake and Ladder game played with single player");
+            Console.WriteLine($"player at {Position} Position");
+            Console.Read();
 
         }
     }

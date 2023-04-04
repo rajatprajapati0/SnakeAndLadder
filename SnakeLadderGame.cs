@@ -31,12 +31,19 @@ namespace SnakeAndLadder
                         if(Position < 0) 
                         {
                          Position = 0;
+                         Console.WriteLine("count below 0 play again");
+
                         }
-                        msg = "snake~~~~~";
+                        msg = "snake~~~~~~~~~~~~<>";
                         break;
                     case ladder:
                         Position += dice;
-                        msg = "ladder#####";
+                        if (Position > totalSteps)
+                        {
+                            Position -=dice;
+                            Console.WriteLine("count above 100 play again");
+                        }
+                        msg = "ladder#############";
                         break;
                     default:
                         msg = "No Play";

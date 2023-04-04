@@ -6,10 +6,16 @@ namespace SnakeAndLadder
     {
         static void Main(string[] args)
         {
-            int Position = 0;
             Console.WriteLine("******Snake & Ladder Simulator******");
-            Console.WriteLine("Snake and Ladder game played with single player");
-            Console.WriteLine($"player at {Position} Position");
+            Console.WriteLine("Snake and Ladder game played with single player\n");
+
+            int Position = 0;
+            Random random = new Random();
+            int dice=random.Next(1,7);
+
+            Position = dice;
+            Console.WriteLine($"player at Position :'{Position}' \nplayer get  no. on dice :'{dice}'");
+
             Console.Read();
 
         }
